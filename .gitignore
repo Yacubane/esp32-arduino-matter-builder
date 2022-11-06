@@ -1,0 +1,12 @@
+.DS_Store
+.vscode
+
+/tools/**
+!/tools/.gitkeep
+
+/exported_artifacts/**
+!/exported_artifacts/.gitkeep
+
+/stub_project/build
+/stub_project/sdkconfig
+/stub_project/sdkconfig.defaults
