@@ -10,3 +10,5 @@
 /stub_project/build
 /stub_project/sdkconfig
 /stub_project/sdkconfig.defaults
+/stub_project/managed_components
+/stub_project/dependencies.lock
