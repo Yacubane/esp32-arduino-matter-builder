@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 cd tools
 
-git clone --recursive -b v4.4.3 https://github.com/espressif/esp-idf
+ESP_IDF_VERSION="v4.4.4"
+MATTER_VERSION="v1.0.0.2"
+ESP_MATTER_VERSION="d886f9c"
+ARDUINO_ESP32_VERSION="2.0.7"
 
+git clone --recursive -b $ESP_IDF_VERSION https://github.com/espressif/esp-idf
 git clone --recursive https://github.com/espressif/esp-matter
-cd esp-matter
-git checkout 65e1ed11e2b474283148719aa835cf9cc43d9714
-
-cd connectedhomeip/connectedhomeip
-git checkout v1.0.0.2
-cd ../../.. 
-
+git -C esp-matter checkout $ESP_MATTER_VERSION
+git -C esp-matter/connectedhomeip/connectedhomeip checkout $MATTER_VERSION
 git clone https://github.com/espressif/arduino-esp32
-cd arduino-esp32
-git checkout 2.0.6
+git -C arduino-esp32 checkout $ARDUINO_ESP32_VERSION
