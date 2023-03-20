@@ -9,12 +9,6 @@
 #include "esp_matter.h"
 #include "esp_matter_console.h"
 #include "esp_matter_ota.h"
+#include "esp32-arduino-matter_patches_matter.h"
 #define ESP32
-
-// use some method from esp32-hal-bt.c to force linking it
-// and so that it will override btInUse method in esp32-hal-misc.c 
-// to disable releasing BT memory, that can't be later re-allocated
-#include "esp32-hal-bt.h"
-namespace MatterUnused {
-    bool _ = btStarted();
-}
+#include "esp32-arduino-matter_patches_arduino.h"
