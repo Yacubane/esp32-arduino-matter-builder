@@ -36,7 +36,7 @@ attribute_t *attribute_ref;
 // Leaved as empty for simplicity
 static void on_device_event(const ChipDeviceEvent *event, intptr_t arg) {}
 static esp_err_t on_identification(identification::callback_type_t type, uint16_t endpoint_id,
-                                   uint8_t effect_id, void *priv_data) {
+                                   uint8_t effect_id, uint8_t effect_variant, void *priv_data) {
   return ESP_OK;
 }
 

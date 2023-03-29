@@ -17,7 +17,6 @@ MATTER_VERSION=$(get_tag_or_commit_hash "tools/esp-matter/connectedhomeip/connec
 ARDUINO_ESP32_VERSION=$(get_tag_or_commit_hash "tools/arduino-esp32")
 
 PLATFORMIO_ESPRESSIF_VERSION="v6.1.0"
-ESP32_ARDUINO_MATTER_VERSION="1.0.0-beta.2"
 
 perl -i -pe "s/\Q{{ ESP_IDF_VERSION }}/$ESP_IDF_VERSION/" $README_PATH
 perl -i -pe "s/\Q{{ ESP_MATTER_VERSION }}/$ESP_MATTER_VERSION/" $README_PATH
