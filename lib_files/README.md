@@ -12,7 +12,7 @@ This projects aims at possibility to easily launch Matter internet-of-things pro
 ## Installing on PlatformIO
 1. Use espressif32 platform at version {{ PLATFORMIO_ESPRESSIF_VERSION }}
 2. Turn on C++17 support, by setting `build_unflags=-std=gnu++11` and `build_flags=-std=gnu++17`.
-3. Add this library: `lib_deps=https://github.com/jakubdybczak/esp32-arduino-matter.git`
+3. [Download](https://github.com/jakubdybczak/esp32-arduino-matter/releases) and put library into lib folder of project (:warning: you cannot use `lib_deps` in `platformio.ini`, because this repository does not contain binaries due to too big size)
 4. Choose larger partition scheme, for example `board_build.partitions=min_spiffs.csv`
 5. Run example sketch
 
@@ -30,15 +30,19 @@ This project contains precompiled libraries based on specific version of ESP32 S
 * There is no known possibility to change setup PIN.
 * This library comes with precompiled NimBLE, because default Bluedroid shipped with arduino-esp32 takes too much RAM memory.
 * Matter Controllers such as Apple Home, Google Home, SmartThings and others might not have full support of all device types.
+* This repository does not contain source code of this library, because binaries were too big and exceeded Github limits. Please look at Github [releases](https://github.com/jakubdybczak/esp32-arduino-matter/releases) to download whole package. All library files without binaries are stored [here](https://github.com/jakubdybczak/esp32-arduino-matter-builder).
 
 ## Versions
 This project is currently build based on these projects:
 
 | Project       | Tag / Commit hash |
 | ------------- | ------------- |
+| [esp32-arduino-matter-builder ](https://github.com/jakubdybczak/esp32-arduino-matter-builder) | {{ ESP32_ARDUINO_MATTER_BUILDER_VERSION }} |
 | [Matter](https://github.com/project-chip/connectedhomeip) | {{ MATTER_VERSION }} |
 | [esp-matter](https://github.com/espressif/esp-matter) | {{ ESP_MATTER_VERSION }} |
 | [esp-idf](https://github.com/espressif/esp-idf) | {{ ESP_IDF_VERSION }} |
+
+
 
 ## Enabling C++17 on Arduino IDE
 1. Find `platform.txt` for ESP32 board. Location of this file is platform depended.
@@ -51,5 +55,5 @@ This project is currently build based on these projects:
 
 3. Restart Arduino IDE.
 
-## Building custom version of this library
+## Rest of files and process of building custom version of this library
 Please look [here](https://github.com/jakubdybczak/esp32-arduino-matter-builder).

@@ -14,4 +14,5 @@ docker run -v ${PWD}/lib_files:/root/lib_files \
     -v ${PWD}/scripts:/root/scripts \
     -v ${PWD}/build.sh:/root/build.sh \
     -v ${PWD}/exported_artifacts:/root/exported_artifacts \
+    -v ${PWD}/.git:/root/.git \
     esp32-arduino-matter-builder 
