@@ -1,3 +1,5 @@
+#pragma once
+
 #define CHIP_HAVE_CONFIG_H true
 #define CHIP_ADDRESS_RESOLVE_IMPL_INCLUDE_HEADER <lib/address_resolve/AddressResolve_DefaultImpl.h>
 
