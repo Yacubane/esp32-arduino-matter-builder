@@ -48,7 +48,7 @@ static esp_err_t on_attribute_update(attribute::callback_type_t type, uint16_t e
   if (type == attribute::PRE_UPDATE && endpoint_id == light_endpoint_id &&
       cluster_id == CLUSTER_ID && attribute_id == ATTRIBUTE_ID) {
     // We got an light on/off attribute update!
-    boolean new_state = val->val.b;
+    bool new_state = val->val.b;
     digitalWrite(LED_PIN, new_state);
   }
   return ESP_OK;

@@ -54,7 +54,7 @@ static esp_err_t on_attribute_update(attribute::callback_type_t type,
                                      void *priv_data) {
   if (type == attribute::PRE_UPDATE && cluster_id == CLUSTER_ID && attribute_id == ATTRIBUTE_ID) {
     // We got an plugin unit on/off attribute update!
-    boolean new_state = val->val.b;
+    bool new_state = val->val.b;
     if (endpoint_id == plugin_unit_endpoint_id_1) {
       digitalWrite(LED_PIN_1, new_state);
     } else if (endpoint_id == plugin_unit_endpoint_id_2) {

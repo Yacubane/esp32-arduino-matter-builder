@@ -3,8 +3,8 @@ cd tools
 
 ESP_IDF_VERSION="v4.4.4"
 MATTER_VERSION="bd17b9f"
-ESP_MATTER_VERSION="575d51c"
-ARDUINO_ESP32_VERSION="2.0.7"
+ESP_MATTER_VERSION="0b1762e"
+ARDUINO_ESP32_VERSION="2.0.8"
 
 git clone --recursive -b $ESP_IDF_VERSION https://github.com/espressif/esp-idf
 git clone --recursive https://github.com/espressif/esp-matter
