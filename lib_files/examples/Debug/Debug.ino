@@ -1,5 +1,6 @@
 #include "Matter.h"
 #include <app/server/OnboardingCodesUtil.h>
+#include <credentials/examples/DeviceAttestationCredsExample.h>
 using namespace chip;
 using namespace chip::app::Clusters;
 using namespace esp_matter;
@@ -136,6 +137,9 @@ void setup() {
   contact_sensor_config.boolean_state.state_value = true;
   endpoint = contact_sensor::create(node, &contact_sensor_config, ENDPOINT_FLAG_NONE, NULL);
   print_endpoint_info("contact_sensor", endpoint);
+
+  // Setup DAC (this is good place to also set custom commission data, passcodes etc.)
+  esp_matter::set_custom_dac_provider(chip::Credentials::Examples::GetExampleDACProvider());
 
   esp_matter::start(on_device_event);
 

@@ -1,3 +1,5 @@
+#pragma once
+
 // emberAfLevelControlClusterMoveToClosestFrequencyCallback does not have implementation
 // but is referenced by esp-matter. Even if there is not real usage of this method in project for
 // some reason after setting CONFIG_COMPILER_CXX_EXCEPTIONS=y in sdkconfig it does not compile

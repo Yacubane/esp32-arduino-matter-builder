@@ -5,10 +5,13 @@
 #include <esp_matter.h>
 #include <esp_matter_console.h>
 #include <esp_matter_ota.h>
+#include <esp_matter_providers.h>
 
 #include <app/server/CommissioningWindowManager.h>
 #include <app/server/Server.h>
+
 #include <app/server/OnboardingCodesUtil.h>
+#include <credentials/examples/DeviceAttestationCredsExample.h>
 
 #include "esp32-arduino-matter_patches_matter.h"
 
@@ -86,6 +89,9 @@ extern "C" void app_main()
 
   // Save generated endpoint id
   light_endpoint_id = endpoint::get_id(endpoint);
+
+  // Setup DAC (this is good place to also set custom commission data, passcodes etc.)
+  esp_matter::set_custom_dac_provider(chip::Credentials::Examples::GetExampleDACProvider());
 
   // Start Matter device
   esp_matter::start(on_device_event);

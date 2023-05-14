@@ -1,5 +1,6 @@
 #include "Matter.h"
 #include <app/server/OnboardingCodesUtil.h>
+#include <credentials/examples/DeviceAttestationCredsExample.h>
 using namespace chip;
 using namespace chip::app::Clusters;
 using namespace esp_matter;
@@ -78,6 +79,9 @@ void setup() {
 
   // Save generated endpoint id
   light_endpoint_id = endpoint::get_id(endpoint);
+  
+  // Setup DAC (this is good place to also set custom commission data, passcodes etc.)
+  esp_matter::set_custom_dac_provider(chip::Credentials::Examples::GetExampleDACProvider());
 
   // Start Matter device
   esp_matter::start(on_device_event);

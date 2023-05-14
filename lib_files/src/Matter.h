@@ -11,6 +11,8 @@
 #include "esp_matter.h"
 #include "esp_matter_console.h"
 #include "esp_matter_ota.h"
+#include "esp_matter_providers.h"
+
 #include "esp32-arduino-matter_patches_matter.h"
 #define ESP32
 #include "esp32-arduino-matter_patches_arduino.h"

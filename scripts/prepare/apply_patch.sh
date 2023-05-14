@@ -4,6 +4,6 @@
 # so we have to manually remove this flag.
 
 FIND="cfg = WIFI_INIT_CONFIG_DEFAULT();"
-REPLACE="${FIND}\n        cfg.feature_caps &= ~CONFIG_FEATURE_CACHE_TX_BUF_BIT;"
-perl -i -pe "s/\Q$FIND/$REPLACE/" tools/esp-matter/connectedhomeip/connectedhomeip/src/platform/ESP32/PlatformManagerImpl.cpp
+REPLACE="${FIND}\n    cfg.feature_caps &= ~CONFIG_FEATURE_CACHE_TX_BUF_BIT;"
+perl -i -pe "s/\Q$FIND/$REPLACE/" tools/esp-matter/connectedhomeip/connectedhomeip/src/platform/ESP32/ESP32Utils.cpp
 echo $?
