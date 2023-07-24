@@ -55,7 +55,6 @@ static esp_err_t on_attribute_update(attribute::callback_type_t type, uint16_t e
   return ESP_OK;
 }
 
-
 void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);

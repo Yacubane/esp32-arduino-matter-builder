@@ -19,11 +19,8 @@ ESP_MATTER_VERSION=$(get_tag_or_commit_hash "tools/esp-matter")
 MATTER_VERSION=$(get_tag_or_commit_hash "tools/esp-matter/connectedhomeip/connectedhomeip")
 ARDUINO_ESP32_VERSION=$(get_tag_or_commit_hash "tools/arduino-esp32")
 
-PLATFORMIO_ESPRESSIF_VERSION="v6.1.0"
-
 perl -i -pe "s/\Q{{ ESP32_ARDUINO_MATTER_BUILDER_VERSION }}/$ESP32_ARDUINO_MATTER_BUILDER_VERSION/" $README_PATH
 perl -i -pe "s/\Q{{ ESP_IDF_VERSION }}/$ESP_IDF_VERSION/" $README_PATH
 perl -i -pe "s/\Q{{ ESP_MATTER_VERSION }}/$ESP_MATTER_VERSION/" $README_PATH
 perl -i -pe "s/\Q{{ MATTER_VERSION }}/$MATTER_VERSION/" $README_PATH
 perl -i -pe "s/\Q{{ ARDUINO_ESP32_VERSION }}/$ARDUINO_ESP32_VERSION/" $README_PATH
-perl -i -pe "s/\Q{{ PLATFORMIO_ESPRESSIF_VERSION }}/$PLATFORMIO_ESPRESSIF_VERSION/" $README_PATH

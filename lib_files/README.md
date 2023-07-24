@@ -10,7 +10,7 @@ This projects aims at possibility to easily launch Matter internet-of-things pro
 6. Run example sketch.
 
 ## Installing on PlatformIO
-1. Use espressif32 platform at version **{{ PLATFORMIO_ESPRESSIF_VERSION }}**, by setting `platform = espressif32@{{ PLATFORMIO_ESPRESSIF_VERSION }}` in `platformio.ini`. **This is crucial**, because this library contains pre-compiled files.
+1. Use espressif32 platform at version compatible with **{{ ARDUINO_ESP32_VERSION }}** `arduino-esp32` core version (you can determine it by looking at changelog [here](https://github.com/platformio/platform-espressif32/releases)). Other versions might work, but there is no guarantee - this library contains precompiled libraries and binaries might or might not be compatible. Set that version by adding: `platform = espressif32@x.x.x` in `platformio.ini`.
 2. Turn on C++17 support, by setting `build_unflags=-std=gnu++11` and `build_flags=-std=gnu++17` in `platformio.ini`.
 3. [Download](https://github.com/Yacubane/esp32-arduino-matter/releases) and put library into `lib` folder of project (:warning: you cannot use `lib_deps` in `platformio.ini`, because this repository does not contain binaries due to too big size). The desired structure is as follows:
 ```
@@ -28,14 +28,10 @@ This projects aims at possibility to easily launch Matter internet-of-things pro
 In `examples` folder there are some sketches that demonstrates usage of Matter. `Light` example is tested every release. Example sketches are in [release](https://github.com/Yacubane/esp32-arduino-matter/releases) created from [esp32-arduino-matter-builder repository](https://github.com/Yacubane/esp32-arduino-matter-builder/tree/master/lib_files/examples).
 
 ## Compatibility
-This project contains precompiled libraries based on specific version of ESP32 SDK and this library does not guarantee support for other versions. Current build is based on `esp-idf` at version {{ ESP_IDF_VERSION }} and will work with:
-* Arduino IDE with [ESP32 board](https://github.com/espressif/arduino-esp32) at version {{ ARDUINO_ESP32_VERSION }}
-* PlatformIO with [PlatformIO espressif32 platform](https://github.com/platformio/platform-espressif32) at version {{ PLATFORMIO_ESPRESSIF_VERSION }}
+This project contains precompiled libraries based on specific version of ESP32 SDK and this library does not guarantee support for other versions. Current build is based on `esp-idf` at version {{ ESP_IDF_VERSION }} and will work with Arduino IDE on [ESP32 board](https://github.com/espressif/arduino-esp32) at version {{ ARDUINO_ESP32_VERSION }}
 
 ## Limitations
 * Library only works on ESP32 (ESP32-C3 and ESP32-S3 might work as well, but aren't tested).
-* There is no possibility to change vendor/product ID as this value is pre-compiled.
-* There is no known possibility to change setup PIN.
 * This library comes with precompiled NimBLE, because default Bluedroid shipped with arduino-esp32 takes too much RAM memory.
 * Matter Controllers such as Apple Home, Google Home, SmartThings and others might not have full support of all device types.
 * This repository does not contain source code of this library, because binaries were too big and exceeded Github limits. Please look at Github [releases](https://github.com/Yacubane/esp32-arduino-matter/releases) to download whole package. All library files without binaries are stored [here](https://github.com/Yacubane/esp32-arduino-matter-builder).

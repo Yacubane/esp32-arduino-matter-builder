@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ESP32_ARDUINO_MATTER_VERSION="1.0.0-beta.2"
-
 . ./scripts/build/setup_env.sh
 
 target="esp32"

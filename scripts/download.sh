@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 cd tools
 
-ESP_IDF_VERSION="7641c8e" #4.4.4 with patch
-MATTER_VERSION="v1.1.0.1"
-ESP_MATTER_VERSION="4707b88"
-ARDUINO_ESP32_VERSION="2.0.9"
+ESP_IDF_VERSION="v4.4.5"
+MATTER_VERSION="08b1366"
+ESP_MATTER_VERSION="603296a"
+ARDUINO_ESP32_VERSION="2.0.11"
 
 git clone --recursive https://github.com/espressif/esp-idf
 git -C esp-idf checkout $ESP_IDF_VERSION

@@ -68,9 +68,17 @@ static esp_err_t on_attribute_update(attribute::callback_type_t type, uint16_t e
   return ESP_OK;
 }
 
+void fix_project_build() {
+  // For some reason linker will throw errors like "undefined reference to `esp_err_to_name'"
+  // when this method is not used
+  esp_err_t err = NULL;
+  esp_err_to_name(err);
+}
 
 extern "C" void app_main()
 {
+  fix_project_build();
+
   // Enable debug logging
   esp_log_level_set("*", ESP_LOG_DEBUG);
 

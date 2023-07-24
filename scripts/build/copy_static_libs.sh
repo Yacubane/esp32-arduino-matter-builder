@@ -9,7 +9,6 @@ mkdir $workdir/$target
 #cp -r exported_artifacts/static_non_arduino_libs/* $workdir/$target
 cp -r exported_artifacts/static_non_arduino_libs/libCHIP.a $workdir/$target/libCHIP.a
 cp exported_artifacts/static_non_arduino_libs/libesp_matter* $workdir/$target
-cp -r exported_artifacts/static_non_arduino_libs/libesp32_mbedtls.a $workdir/$target/libesp32_mbedtls.a
 
 # copy all bluetooth-related libs (to support NimBLE)
 # also there is need to change name in order to Arduino IDE take this into account when linking
